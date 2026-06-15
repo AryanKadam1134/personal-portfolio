@@ -29,7 +29,7 @@ export const About = () => {
   }, []);
 
   return (
-    <div id="about" className="py-20 text-white">
+    <div id="about" className="pt-35 pb-20 text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Container */}
         <div className="flex justify-center lg:justify-end">
@@ -43,18 +43,18 @@ export const About = () => {
         </div>
 
         {/* Right Container */}
-        <div className="flex flex-col items-center lg:items-start gap-8">
+        <div className="flex flex-col items-center lg:items-start">
           <p className="font-semibold text-4xl lg:text-6xl">
             {firstName} {lastName}
           </p>
 
-          <p className="text-white/80">{headline}</p>
+          <p className="mt-4 text-blue-400">{headline}</p>
 
-          <p className="max-w-150 text-center lg:text-start text-white/80">
+          <p className="mt-8 max-w-150 text-center lg:text-start text-white/80">
             {about}
           </p>
 
-          <div className="flex items-center gap-2">
+          <div className="mt-4 flex items-center gap-2">
             <MapPin size={22} />
 
             <p>

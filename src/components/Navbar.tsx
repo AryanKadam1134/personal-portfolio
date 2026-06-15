@@ -4,9 +4,9 @@ export const Navbar = () => {
   const [currentSection, setCurrentSection] = useState("#about");
 
   return (
-    <div className="sticky top-0 left-0 z-50 w-full backdrop-blur-md border-b border-white/10">
-      <div className="mx-6 md:mx-30 py-4">
-        <div className="flex items-center justify-between">
+    <div className="fixed top-0 left-0 z-50 w-full backdrop-blur-md border-b border-white/10">
+      <div className="mx-6 md:mx-30">
+        <div className="h-16 flex items-center justify-between">
           <a href="#about" className="font-semibold text-2xl text-white">
             AK
           </a>

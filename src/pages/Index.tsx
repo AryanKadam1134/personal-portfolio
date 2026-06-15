@@ -7,13 +7,14 @@ import { Educations } from "../components/Educations";
 import { Experiences } from "../components/Experiences";
 import { Certificates } from "../components/Certificates";
 import { Achievements } from "../components/Achievements";
+
 import { Particles } from "../components/ui/Particles";
 
 export const Index = () => {
   return (
     <div className="relative min-h-screen bg-[#121212] overflow-hidden">
       <div className="fixed inset-0">
-        {/* <Particles
+        <Particles
           particleColors={["#ffffff"]}
           particleCount={300}
           particleSpread={10}
@@ -23,10 +24,10 @@ export const Index = () => {
           alphaParticles={false}
           disableRotation={false}
           pixelRatio={1}
-        /> */}
+        />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-hidden">
         <Navbar />
 
         <div className="px-6 mx-auto max-w-320">
