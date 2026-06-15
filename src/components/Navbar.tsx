@@ -5,7 +5,7 @@ export const Navbar = () => {
 
   return (
     <div className="sticky top-0 left-0 z-50 w-full backdrop-blur-md border-b border-white/10">
-      <div className="px-30 py-4">
+      <div className="mx-6 md:mx-30 py-4">
         <div className="flex items-center justify-between">
           <a href="#about" className="font-semibold text-2xl text-white">
             AK

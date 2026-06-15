@@ -7,25 +7,44 @@ import { Educations } from "../components/Educations";
 import { Experiences } from "../components/Experiences";
 import { Certificates } from "../components/Certificates";
 import { Achievements } from "../components/Achievements";
+import { Particles } from "../components/ui/Particles";
 
 export const Index = () => {
   return (
-    <div className="min-h-screen bg-[#09090f]">
-      <Navbar />
+    <div className="relative min-h-screen bg-[#121212] overflow-hidden">
+      <div className="fixed inset-0">
+        {/* <Particles
+          particleColors={["#ffffff"]}
+          particleCount={300}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={80}
+          moveParticlesOnHover
+          alphaParticles={false}
+          disableRotation={false}
+          pixelRatio={1}
+        /> */}
+      </div>
 
-      <About />
+      <div className="relative z-10">
+        <Navbar />
 
-      <Projects />
+        <div className="px-6 mx-auto max-w-320">
+          <About />
 
-      <Experiences />
+          <Projects />
 
-      <Skills />
+          <Experiences />
 
-      <Certificates />
+          <Skills />
 
-      <Achievements />
+          <Certificates />
 
-      <Educations />
+          <Achievements />
+
+          <Educations />
+        </div>
+      </div>
     </div>
   );
 };
