@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
+import { Download, MapPin } from "lucide-react";
+
 import { apiEndpoints } from "../services/api";
 
-import type { PortfolioDetails } from "../types/types";
-import { MapPin } from "lucide-react";
+import { type SocialPlatform, type PortfolioDetails } from "../types/types";
 
 export const About = () => {
   const [details, setDetails] = useState<PortfolioDetails | null>(null);
+  const [platforms, setPlatforms] = useState<SocialPlatform[]>([]);
 
   const { firstName, lastName, image, about, headline, location } =
     details || {};
@@ -14,18 +16,24 @@ export const About = () => {
   const { city, state } = location || {};
 
   useEffect(() => {
-    const fetchDetails = async () => {
+    const fetchDetailsAndSocialPlatforms = async () => {
       try {
-        const res = await apiEndpoints.getDetails();
-        const data = res.data;
+        const [detailsRes, platformsRes] = await Promise.all([
+          apiEndpoints.getDetails(),
+          apiEndpoints.getSocialPlatforms(),
+        ]);
 
-        setDetails(data);
+        // const details = detailsRes.data;
+        // const platfroms = platformsRes.data
+
+        setDetails(detailsRes.data);
+        setPlatforms(platformsRes.data);
       } catch (error) {
         console.error("Error fetching Details: ", error);
       }
     };
 
-    fetchDetails();
+    fetchDetailsAndSocialPlatforms();
   }, []);
 
   return (
@@ -60,6 +68,32 @@ export const About = () => {
             <p>
               {city} {state && <span>, {state}</span>}
             </p>
+          </div>
+
+          <div className="mt-8 flex items-center gap-3">
+            {platforms?.map((platform, idx) => {
+              const { name, link, logoUrl } = platform || {};
+
+              return (
+                <button
+                  key={idx}
+                  onClick={() => window.open(link, "_blank")}
+                  className="p-3 group backdrop-blur-xs border border-gray-500 rounded-md hover:scale-103 cursor-pointer"
+                >
+                  <img
+                    src={logoUrl}
+                    alt={name}
+                    className="size-4 group-hover:scale-103"
+                  />
+                </button>
+              );
+            })}
+
+            <button className="ml-4 px-4 py-2 backdrop-blur-xs border border-gray-500 rounded-md">
+              <div className="flex items-center gap-2">
+                <Download size={20} /> My Resume
+              </div>
+            </button>
           </div>
         </div>
       </div>

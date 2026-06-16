@@ -35,9 +35,9 @@ export type Paginated<T> = {
 };
 
 export type MediaAsset = {
-  url: string | null;
-  public_id: string | null;
-  resource_type: string | null;
+  url: string | undefined;
+  public_id: string | undefined;
+  resource_type: string | undefined;
 };
 
 export type MediaAssetRequired = {
