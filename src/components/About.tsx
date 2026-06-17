@@ -37,7 +37,7 @@ export const About = () => {
   }, []);
 
   return (
-    <div id="about" className="pt-35 pb-20 text-white">
+    <div id="about" className="pt-35 pb-15 text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Container */}
         <div className="flex justify-center lg:justify-end">
@@ -78,7 +78,7 @@ export const About = () => {
                 <button
                   key={idx}
                   onClick={() => window.open(link, "_blank")}
-                  className="p-3 group backdrop-blur-xs border border-gray-500 rounded-md hover:scale-103 cursor-pointer"
+                  className="p-3 group bg-white/2 backdrop-blur-xs border border-white/20 hover:border-white/50 rounded-md hover:scale-103 transition-all duration-300 cursor-pointer"
                 >
                   <img
                     src={logoUrl}
@@ -89,7 +89,7 @@ export const About = () => {
               );
             })}
 
-            <button className="ml-4 px-4 py-2 backdrop-blur-xs border border-gray-500 rounded-md">
+            <button className="ml-4 px-4 py-2 bg-white/2 backdrop-blur-xs border border-white/20 hover:border-white/50 rounded-md hover:scale-103 transition-all duration-300 cursor-pointer">
               <div className="flex items-center gap-2">
                 <Download size={20} /> My Resume
               </div>

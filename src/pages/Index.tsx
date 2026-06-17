@@ -2,9 +2,9 @@ import { Navbar } from "../components/Navbar";
 
 import { About } from "../components/About";
 import { Skills } from "../components/Skills";
-import { Projects } from "../components/Projects";
+import { Projects } from "../components/projects/Projects";
 import { Educations } from "../components/Educations";
-import { Experiences } from "../components/Experiences";
+import { Experiences } from "../components/experiences/Experiences";
 import { Certificates } from "../components/Certificates";
 import { Achievements } from "../components/Achievements";
 
