@@ -1,12 +1,12 @@
 import { Navbar } from "../components/Navbar";
 
 import { About } from "../components/About";
-import { Skills } from "../components/Skills";
+import { Skills } from "../components/skills/Skills";
 import { Projects } from "../components/projects/Projects";
-import { Educations } from "../components/Educations";
+import { Educations } from "../components/educations/Educations";
 import { Experiences } from "../components/experiences/Experiences";
-import { Certificates } from "../components/Certificates";
-import { Achievements } from "../components/Achievements";
+import { Certificates } from "../components/certificates/Certificates";
+import { Achievements } from "../components/achievements/Achievements";
 
 import { Particles } from "../components/ui/Particles";
 

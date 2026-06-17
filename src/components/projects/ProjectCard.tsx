@@ -2,6 +2,8 @@ import React from "react";
 
 import { ExternalLink } from "lucide-react";
 
+import { Badge } from "../ui/Badge";
+
 import type { Project } from "../../types/types";
 
 export const ProjectCard = ({
@@ -10,7 +12,6 @@ export const ProjectCard = ({
   projectDetails: Project;
 }) => {
   const {
-    _id,
     title,
     description,
     githubLink,
@@ -47,27 +48,22 @@ export const ProjectCard = ({
         </div>
 
         {/* Content container with flex-grow to push links to bottom */}
-        <div className="p-6 space-y-4 flex-grow flex flex-col">
+        <div className="p-6 grow flex flex-col gap-4">
           <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
             {title}
           </h3>
 
-          <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+          <p className="grow text-gray-400 text-sm leading-relaxed">
             {description}
           </p>
 
-          <div className="flex flex-wrap gap-2 pt-4">
-            {techStack.map((tech, techIndex) => (
-              <span
-                key={`${_id}-${tech._id}-${techIndex}`}
-                className="px-2.5 py-1 text-xs text-white bg-white/10 border border-white/20 rounded-full"
-              >
-                {tech.name}
-              </span>
+          <div className="pt-4 flex flex-wrap gap-2">
+            {techStack.map((tech, idx) => (
+              <Badge key={tech.name || idx} text={tech.name} />
             ))}
           </div>
 
-          <div className="flex gap-4 pt-4 mt-auto">
+          <div className="pt-4 flex gap-4 mt-auto">
             {/* Added mt-auto */}
             {githubLink && (
               <a
