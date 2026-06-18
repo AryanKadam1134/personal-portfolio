@@ -1,8 +1,11 @@
 import React from "react";
 
-import type { Experience } from "../../types/types";
+import dayjs from "dayjs";
 import { Briefcase } from "lucide-react";
+
 import { Badge } from "../ui/Badge";
+
+import type { Experience } from "../../types/types";
 
 export const ExperienceCard = ({
   experienceDetails,
@@ -23,30 +26,27 @@ export const ExperienceCard = ({
 
   const formatDate = (value: string | null) => {
     if (!value) return "Unknown";
-    const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return value;
-    return parsed.toLocaleDateString();
+
+    return dayjs(value).format("MMM DD, YYYY");
   };
 
   return (
     <div
-      className="group p-6 bg-white/2 backdrop-blur-xs
+      className="p-6 bg-white/2 backdrop-blur-xs
         border border-white/20 hover:border-white/50 rounded-2xl
         hover:scale-101 hover:shadow-xl hover:shadow-white/10
-        transition-all duration-300 overflow-hidden"
+        transition-all duration-300"
     >
       <div className="flex flex-col gap-4">
         <div className="flex items-start gap-4">
-          <div className="mt-1 p-3 bg-blue-600/20 rounded-xl flex items-center justify-center shrink-0">
-            <Briefcase className="text-blue-400" />
+          <div className="mt-2 p-3 shrink-0 text-white bg-white/10 border border-white/20 rounded-lg">
+            <Briefcase />
           </div>
 
-          <div className="flex-grow">
-            <h3 className="text-lg font-semibold text-white mb-1">
-              {organization}
-            </h3>
+          <div>
+            <h3 className="text-lg font-semibold text-white">{organization}</h3>
 
-            <p className="text-blue-400 text-sm mb-1 capitalize">
+            <p className="text-blue-400 text-sm capitalize">
               {employmentType.replaceAll("-", " ")}
             </p>
 

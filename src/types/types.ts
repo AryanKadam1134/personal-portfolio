@@ -121,6 +121,7 @@ export type SkillCategoryWithSkills = {
   _id: string;
   owner: string;
   name: string;
+  logoUrl: string;
   visibility: "public";
   sortOrder: number;
   skills: CategorySkill[];
