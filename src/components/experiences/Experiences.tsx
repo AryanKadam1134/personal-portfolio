@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 
+import { ExperienceCard } from "./ExperienceCard";
+
 import { SectionHeader } from "../ui/SectionHeader";
 
 import { apiEndpoints } from "../../services/api";
 
 import type { Experience } from "../../types/types";
-import { ExperienceCard } from "./ExperienceCard";
 
 export const Experiences = () => {
   const [experiences, setExperiences] = useState<Experience[]>([]);

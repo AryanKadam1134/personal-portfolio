@@ -43,7 +43,7 @@ export const ExperienceCard = ({
             <Briefcase />
           </div>
 
-          <div>
+          <div className="flex flex-col gap-1">
             <h3 className="text-lg font-semibold text-white">{organization}</h3>
 
             <p className="text-blue-400 text-sm capitalize">

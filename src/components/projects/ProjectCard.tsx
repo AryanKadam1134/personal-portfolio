@@ -70,9 +70,9 @@ export const ProjectCard = ({
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-purple-400 transition-colors text-sm font-medium"
+                className="flex items-center gap-2 font-medium text-sm text-gray-400 hover:text-purple-400 transition-colors"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink size={16} />
                 GitHub
               </a>
             )}
@@ -82,9 +82,9 @@ export const ProjectCard = ({
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors text-sm font-medium"
+                className="flex items-center gap-2 font-medium text-sm text-gray-400 hover:text-blue-400 transition-colors"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink size={16} />
                 Visit site
               </a>
             )}
