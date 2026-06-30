@@ -63,7 +63,10 @@ export const Navbar = () => {
               key={name || idx}
               href={hash}
               isCurrent={hash === currentSection}
-              onClick={() => setCurrentSection(hash)}
+              onClick={() => {
+                setCurrentSection(hash);
+                setIsMenuOpen(false);
+              }}
               name={name}
             />
           ))}

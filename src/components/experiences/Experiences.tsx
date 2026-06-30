@@ -28,7 +28,7 @@ export const Experiences = () => {
   }, []);
 
   return (
-    <div id="experiences" className="py-15">
+    <div id="experiences" className="scroll-m-8 py-15">
       <div className="flex flex-col items-center justify-center gap-10">
         <SectionHeader heading="Experiences" />
 

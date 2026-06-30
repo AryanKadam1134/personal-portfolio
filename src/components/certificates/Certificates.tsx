@@ -30,7 +30,7 @@ export const Certificates = () => {
   if (!certificates?.length) return;
 
   return (
-    <div id="certificates" className="py-15">
+    <div id="certificates" className="scroll-m-8 py-15">
       <div className="flex flex-col items-center justify-center gap-10">
         <SectionHeader heading="Certificates" />
 

@@ -30,7 +30,7 @@ export const Educations = () => {
   if (!educations?.length) return;
 
   return (
-    <div id="educations" className="py-15">
+    <div id="educations" className="scroll-m-8 py-15">
       <div className="flex flex-col items-center justify-center gap-10">
         <SectionHeader heading="Education" />
 

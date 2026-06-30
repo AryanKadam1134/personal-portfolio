@@ -30,7 +30,7 @@ export const Achievements = () => {
   if (!achievements?.length) return;
 
   return (
-    <div id="acheivements" className="py-15">
+    <div id="acheivements" className="scroll-m-8 py-15">
       <div className="flex flex-col items-center justify-center gap-10">
         <SectionHeader heading="Achievements" />
 
