@@ -29,7 +29,7 @@ export const Skills = () => {
   return (
     <div id="skills" className="py-15">
       <div className="flex flex-col items-center justify-center gap-10">
-        <SectionHeader heading="Skills" />
+        <SectionHeader heading="Technical Skills" />
 
         <div className="flex flex-col items-center justify-center gap-10">
           {skills?.map((skill, idx) => (

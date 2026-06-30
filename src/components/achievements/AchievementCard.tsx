@@ -3,14 +3,18 @@ import React from "react";
 import dayjs from "dayjs";
 import { Award, ExternalLink } from "lucide-react";
 
-import type { Certificate } from "../../types/types";
+import type { Achievement } from "../../types/types";
 
-export const CertificateCard = ({
-  certificateDetails,
+export const AchievementCard = ({
+  achievementDetails,
 }: {
-  certificateDetails: Certificate;
+  achievementDetails: Achievement;
 }) => {
-  const { title, issuer, issueDate, credentialUrl } = certificateDetails;
+  const { title, issuer, date, link, certificateDetails } =
+    achievementDetails || {};
+
+  const achievementLink =
+    link || certificateDetails?.credentialUrl || undefined;
 
   const formatDate = (value: string | null) => {
     if (!value) return "Unknown";
@@ -36,18 +40,19 @@ export const CertificateCard = ({
           {issuer && <p className="text-blue-400 text-sm">{issuer}</p>}
 
           <span className="text-gray-500 text-sm block mb-3">
-            {formatDate(issueDate)}
+            {formatDate(date)}
           </span>
 
-          {credentialUrl && (
+          {achievementLink && (
             <a
-              href={credentialUrl}
+              href={achievementLink}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-medium text-sm text-gray-400 hover:text-blue-400 transition-colors"
             >
               <ExternalLink size={16} />
-              View Certificate
+
+              <span className="font-medium">View Certificate</span>
             </a>
           )}
         </div>
