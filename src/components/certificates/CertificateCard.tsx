@@ -1,7 +1,8 @@
 import React from "react";
 
-import dayjs from "dayjs";
 import { Award, ExternalLink } from "lucide-react";
+
+import { formatDate } from "../../utils/formatDate";
 
 import type { Certificate } from "../../types/types";
 
@@ -11,12 +12,6 @@ export const CertificateCard = ({
   certificateDetails: Certificate;
 }) => {
   const { title, issuer, issueDate, credentialUrl } = certificateDetails;
-
-  const formatDate = (value: string | null) => {
-    if (!value) return "Unknown";
-
-    return dayjs(value).format("MMM DD, YYYY");
-  };
 
   return (
     <div

@@ -1,9 +1,10 @@
 import React from "react";
 
-import dayjs from "dayjs";
 import { Briefcase } from "lucide-react";
 
 import { Badge } from "../ui/Badge";
+
+import { formatDate } from "../../utils/formatDate";
 
 import type { Experience } from "../../types/types";
 
@@ -23,12 +24,6 @@ export const ExperienceCard = ({
     highlights,
     techStack,
   } = experienceDetails || {};
-
-  const formatDate = (value: string | null) => {
-    if (!value) return "Unknown";
-
-    return dayjs(value).format("MMM DD, YYYY");
-  };
 
   return (
     <div

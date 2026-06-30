@@ -36,7 +36,7 @@ export const SkillsCard = ({
                       src={
                         logoUrl?.includes("https")
                           ? logoUrl
-                          : `/images/${logoUrl}`
+                          : `src/assets/${logoUrl}`
                       }
                       alt={name}
                       className="size-10"

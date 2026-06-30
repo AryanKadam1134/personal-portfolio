@@ -51,18 +51,18 @@ export const About = () => {
         </div>
 
         {/* Right Container */}
-        <div className="flex flex-col items-center lg:items-start">
+        <div className="flex flex-col items-center lg:items-start gap-4">
           <p className="font-semibold text-4xl lg:text-6xl">
             {firstName} {lastName}
           </p>
 
-          <p className="mt-4 text-blue-400">{headline}</p>
+          <p className="text-blue-400">{headline}</p>
 
-          <p className="mt-8 max-w-150 text-center lg:text-start text-white/80">
+          <p className="mt-4 max-w-150 text-center lg:text-start text-white/80">
             {about}
           </p>
 
-          <div className="mt-4 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <MapPin size={22} />
 
             <p>
@@ -70,7 +70,7 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="mt-8 flex items-center gap-3">
+          <div className="mt-4 flex items-center gap-3">
             {platforms?.map((platform, idx) => {
               const { name, link, logoUrl } = platform || {};
 
