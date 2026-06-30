@@ -12,7 +12,7 @@ export const Achievements = () => {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
 
   useEffect(() => {
-    const fetchCertificates = async () => {
+    const fetchAchievements = async () => {
       try {
         const res = await apiEndpoints.getAchievements({});
         const data = res.data?.data;
@@ -24,7 +24,7 @@ export const Achievements = () => {
       }
     };
 
-    fetchCertificates();
+    fetchAchievements();
   }, []);
 
   if (!achievements?.length) return;
