@@ -1,5 +1,3 @@
-import React from "react";
-
 import type { SkillCategoryWithSkills } from "../../types/types";
 
 export const SkillsCard = ({

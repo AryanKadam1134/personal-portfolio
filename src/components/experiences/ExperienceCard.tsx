@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Briefcase } from "lucide-react";
 
 import { Badge } from "../ui/Badge";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ProjectCard } from "./ProjectCard";
 
@@ -26,6 +26,8 @@ export const Projects = () => {
 
     fetchProjects();
   }, []);
+
+  if (!projects?.length) return;
 
   return (
     <div id="projects" className="scroll-m-8 py-15">

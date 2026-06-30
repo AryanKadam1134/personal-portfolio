@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SkillsCard } from "./SkillsCard";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -25,6 +25,8 @@ export const Skills = () => {
 
     fetchExperiences();
   }, []);
+
+  if (!skills?.length) return;
 
   return (
     <div id="skills" className="scroll-m-8 py-15">

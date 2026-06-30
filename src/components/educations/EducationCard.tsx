@@ -1,5 +1,3 @@
-import React from "react";
-
 import { GraduationCap } from "lucide-react";
 
 import type { Education } from "../../types/types";

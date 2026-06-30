@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { ExperienceCard } from "./ExperienceCard";
 
@@ -26,6 +26,8 @@ export const Experiences = () => {
 
     fetchExperiences();
   }, []);
+
+  if (!experiences?.length) return;
 
   return (
     <div id="experiences" className="scroll-m-8 py-15">

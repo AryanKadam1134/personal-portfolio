@@ -4,7 +4,7 @@ import { Download, MapPin } from "lucide-react";
 
 import { apiEndpoints } from "../services/api";
 
-import { type SocialPlatform, type PortfolioDetails } from "../types/types";
+import type { SocialPlatform, PortfolioDetails } from "../types/types";
 
 export const About = () => {
   const [details, setDetails] = useState<PortfolioDetails | null>(null);
