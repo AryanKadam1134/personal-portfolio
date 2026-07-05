@@ -53,13 +53,10 @@ export const EducationCard = ({
 
           <h4 className="text-sm text-purple-400">{instituteName}</h4>
 
-          <div className="flex gap-4 text-sm text-gray-500">
-            <span>
-              {formatYearRange(startYear, endYear, isCurrent, latestYear)}
-            </span>
-
-            <span>{formatScore(cgpa, percentage)}</span>
-          </div>
+          <span className="block text-sm text-gray-500">
+            {formatYearRange(startYear, endYear, isCurrent, latestYear)} •{" "}
+            {formatScore(cgpa, percentage)}
+          </span>
         </div>
       </div>
     </div>
