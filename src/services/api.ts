@@ -19,6 +19,8 @@ api.interceptors.response.use(
 );
 
 export const apiEndpoints = {
+  getSummary: () => api.get(`/summary`),
+
   getDetails: () => api.get(`/details`),
 
   getSocialPlatforms: () => api.get(`/social-platforms`),

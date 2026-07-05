@@ -52,6 +52,17 @@ export type PortfolioLocation = {
   city: string | null;
 };
 
+export type Summary = {
+  socialPlatforms: number;
+  projects: number;
+  skillCategories: number;
+  skills: number;
+  experiences: number;
+  certificates: number;
+  achievements: number;
+  educations: number;
+};
+
 export type PortfolioDetails = {
   _id: string;
   username: string;
