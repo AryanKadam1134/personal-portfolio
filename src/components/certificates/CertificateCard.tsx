@@ -9,7 +9,7 @@ export const CertificateCard = ({
 }: {
   certificateDetails: Certificate;
 }) => {
-  const { title, issuer, issueDate, credentialUrl } = certificateDetails;
+  const { title, issuer, issueDate, credentialUrl } = certificateDetails || {};
 
   return (
     <div

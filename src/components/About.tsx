@@ -62,13 +62,15 @@ export const About = () => {
             {about}
           </p>
 
-          <div className="flex items-center gap-2">
-            <MapPin size={22} />
+          {(city || state) && (
+            <div className="flex items-center gap-2">
+              <MapPin size={22} />
 
-            <p>
-              {city} {state && <span>, {state}</span>}
-            </p>
-          </div>
+              <p>
+                {city} {state && <span>, {state}</span>}
+              </p>
+            </div>
+          )}
 
           <div className="mt-4 flex items-center gap-3">
             {platforms?.map((platform, idx) => {

@@ -17,7 +17,7 @@ export const ProjectCard = ({
     techStack,
     coverImageIndex,
     projectImages,
-  } = projectDetails;
+  } = projectDetails || {};
 
   const coverImage = projectImages[coverImageIndex ?? 0];
   const { url } = coverImage || {};
