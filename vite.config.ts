@@ -3,8 +3,6 @@ import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 
-const ip = process.env.VITE_APP_IP;
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -13,11 +11,9 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
   ],
   server: {
-    host: true,
+    host: "0.0.0.0",
     port: 5173,
     hmr: {
-      // set this to the host IP (the address other clients will use)
-      host: ip,
       protocol: "ws",
     },
   },

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { Menu, X } from "lucide-react";
 
+import { cn } from "../utils/cn";
+
 import { apiEndpoints } from "../services/api";
 
 import type { Summary } from "../types/types";
@@ -29,10 +31,26 @@ export const Navbar = () => {
   const [summary, setSummary] = useState<Summary | null>(null);
 
   const NAV_ITEMS = [
-    { name: "About", hash: "#about", count: true },
-    { name: "Projects", hash: "#projects", count: summary?.projects },
-    { name: "Experiences", hash: "#experiences", count: summary?.experiences },
-    { name: "Skills", hash: "#skills", count: summary?.skillCategories },
+    {
+      name: "About",
+      hash: "#about",
+      count: true,
+    },
+    {
+      name: "Projects",
+      hash: "#projects",
+      count: summary?.projects,
+    },
+    {
+      name: "Experiences",
+      hash: "#experiences",
+      count: summary?.experiences,
+    },
+    {
+      name: "Skills",
+      hash: "#skills",
+      count: summary?.skillCategories,
+    },
     {
       name: "Certificates",
       hash: "#certificates",
@@ -43,7 +61,11 @@ export const Navbar = () => {
       hash: "#acheivements",
       count: summary?.achievements,
     },
-    { name: "Educations", hash: "#educations", count: summary?.educations },
+    {
+      name: "Educations",
+      hash: "#educations",
+      count: summary?.educations,
+    },
   ];
 
   useEffect(() => {
@@ -65,19 +87,23 @@ export const Navbar = () => {
       {/* BACKDROP (mobile only) */}
       <div
         onClick={() => setIsMenuOpen(false)}
-        className={`md:hidden fixed inset-0 z-40 bg-black/30 transition-opacity duration-300
-        ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        className={cn(
+          "fixed inset-0 z-40 md:hidden",
+          "bg-black/30 transition-opacity duration-300",
+          isMenuOpen ? "visible opacity-100" : "invisible opacity-0",
+        )}
       />
 
       {/* Side Menu (mobile only) */}
       <div
-        className={`md:hidden fixed top-0 right-0 z-50 h-full w-[260px] bg-black text-white
-        transform transition-transform duration-300
-        ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
-        shadow-lg`}
+        className={cn(
+          "fixed top-0 right-0 z-50 h-full w-[260px] md:hidden",
+          "transform bg-black text-white shadow-lg transition-transform duration-300",
+          isMenuOpen ? "translate-x-0" : "translate-x-full",
+        )}
       >
         {/* Top Bar */}
-        <div className="h-16 px-6 flex items-center justify-between border-b border-white/10">
+        <div className="flex h-16 items-center justify-between border-b border-white/10 px-6">
           <span className="text-sm font-medium">Menu</span>
           <button onClick={() => setIsMenuOpen(false)}>
             <X size={20} />
@@ -85,7 +111,7 @@ export const Navbar = () => {
         </div>
 
         {/* Links (same spacing style as your dropdown) */}
-        <div className="p-6 flex flex-col gap-6 text-sm">
+        <div className="flex flex-col gap-6 p-6 text-sm">
           {NAV_ITEMS.map(({ name, hash, count }, idx) => {
             if (!count) return;
 
@@ -106,15 +132,15 @@ export const Navbar = () => {
       </div>
 
       {/* Nav Menu (desktop only) */}
-      <div className="fixed top-0 left-0 z-10 w-full backdrop-blur-md border-b border-white/10">
-        <div className="px-6 mx-auto max-w-320">
-          <div className="h-16 flex items-center justify-between">
-            <a href="#about" className="font-semibold text-2xl text-white">
+      <div className="fixed top-0 left-0 z-10 w-full border-b border-white/10 backdrop-blur-md">
+        <div className="mx-auto max-w-320 px-6">
+          <div className="flex h-16 items-center justify-between">
+            <a href="#about" className="text-2xl font-semibold text-white">
               AK
             </a>
 
             {/* Nav Items (Desktop Only) */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden items-center gap-6 md:flex">
               {NAV_ITEMS.map(({ name, hash, count }, idx) => {
                 if (!count) return;
 

@@ -38,10 +38,10 @@ export const About = () => {
 
   return (
     <div id="about" className="pt-35 pb-15 text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
         {/* Left Container */}
         <div className="flex justify-center lg:justify-end">
-          <div className="aspect-3/4 w-full max-w-[300px] lg:max-w-[400px] rounded-2xl overflow-hidden">
+          <div className="aspect-3/4 w-full max-w-[300px] overflow-hidden rounded-2xl lg:max-w-[400px]">
             <img
               src={url}
               alt="Profile Image"
@@ -51,14 +51,14 @@ export const About = () => {
         </div>
 
         {/* Right Container */}
-        <div className="flex flex-col items-center lg:items-start gap-4">
-          <p className="font-semibold text-4xl lg:text-6xl">
+        <div className="flex flex-col items-center gap-4 lg:items-start">
+          <p className="text-4xl font-semibold lg:text-6xl">
             {firstName} {lastName}
           </p>
 
           <p className="text-blue-400">{headline}</p>
 
-          <p className="mt-4 max-w-150 text-center lg:text-start text-white/80">
+          <p className="mt-4 max-w-150 text-center text-white/80 lg:text-start">
             {about}
           </p>
 
@@ -80,7 +80,7 @@ export const About = () => {
                 <button
                   key={idx}
                   onClick={() => window.open(link, "_blank")}
-                  className="p-3 group bg-white/2 backdrop-blur-xs border border-white/20 hover:border-white/50 rounded-md hover:scale-103 transition-all duration-300 cursor-pointer"
+                  className="group cursor-pointer rounded-md border border-white/20 bg-white/2 p-3 backdrop-blur-xs transition-all duration-300 hover:scale-103 hover:border-white/50"
                 >
                   <img
                     src={logoUrl}
@@ -91,7 +91,7 @@ export const About = () => {
               );
             })}
 
-            <button className="ml-4 px-4 py-2 bg-white/2 backdrop-blur-xs border border-white/20 hover:border-white/50 rounded-md hover:scale-103 transition-all duration-300 cursor-pointer">
+            <button className="ml-4 cursor-pointer rounded-md border border-white/20 bg-white/2 px-4 py-2 backdrop-blur-xs transition-all duration-300 hover:scale-103 hover:border-white/50">
               <div className="flex items-center gap-2">
                 <Download size={20} /> My Resume
               </div>
