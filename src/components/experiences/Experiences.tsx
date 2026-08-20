@@ -34,7 +34,7 @@ export const Experiences = () => {
       <div className="flex flex-col items-center justify-center gap-10">
         <SectionHeader heading="Experiences" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {experiences?.map((experience, idx) => {
             return (
               <ExperienceCard

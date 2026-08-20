@@ -22,7 +22,7 @@ export const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#121212] overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-[#121212]">
       <div className="fixed inset-0">
         <Particles
           particleColors={["#ffffff"]}
@@ -38,7 +38,7 @@ export const Index = () => {
       </div>
 
       {loading && (
-        <div className="fixed inset-0 z-50 h-screen w-full flex items-center justify-center text-white">
+        <div className="fixed inset-0 z-50 flex h-screen w-full items-center justify-center text-white">
           . . . LOADING
         </div>
       )}
@@ -48,7 +48,7 @@ export const Index = () => {
       >
         <Navbar />
 
-        <div className="px-6 mx-auto max-w-320">
+        <div className="mx-auto max-w-320 px-6">
           <About />
 
           <Projects />

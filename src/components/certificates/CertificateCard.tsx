@@ -12,23 +12,18 @@ export const CertificateCard = ({
   const { title, issuer, issueDate, credentialUrl } = certificateDetails || {};
 
   return (
-    <div
-      className="p-6 bg-white/2 backdrop-blur-xs
-        border border-white/20 hover:border-white/50 rounded-2xl
-        hover:scale-101 hover:shadow-xl hover:shadow-white/10
-        transition-all duration-300"
-    >
+    <div className="rounded-2xl border border-white/20 bg-white/2 p-6 backdrop-blur-xs transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10">
       <div className="flex items-start gap-4">
-        <div className="mt-2 p-3 shrink-0 text-white bg-white/10 border border-white/20 rounded-lg">
+        <div className="mt-2 shrink-0 rounded-lg border border-white/20 bg-white/10 p-3 text-white">
           <Award />
         </div>
 
-        <div className="grow flex flex-col gap-1">
+        <div className="flex grow flex-col gap-1">
           <h3 className="text-lg font-semibold text-white">{title}</h3>
 
-          {issuer && <p className="text-blue-400 text-sm">{issuer}</p>}
+          {issuer && <p className="text-sm text-blue-400">{issuer}</p>}
 
-          <span className="text-gray-500 text-sm block mb-3">
+          <span className="mb-3 block text-sm text-gray-500">
             {formatDate(issueDate)}
           </span>
 
@@ -37,7 +32,7 @@ export const CertificateCard = ({
               href={credentialUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 font-medium text-sm text-gray-400 hover:text-blue-400 transition-colors"
+              className="flex items-center gap-2 text-sm font-medium text-gray-400 transition-colors hover:text-blue-400"
             >
               <ExternalLink size={16} />
               View Certificate

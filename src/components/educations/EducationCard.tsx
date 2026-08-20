@@ -37,18 +37,13 @@ export const EducationCard = ({
   };
 
   return (
-    <div
-      className="p-6 bg-white/2 backdrop-blur-xs
-        border border-white/20 hover:border-white/50 rounded-2xl
-        hover:scale-101 hover:shadow-xl hover:shadow-white/10
-        transition-all duration-300"
-    >
+    <div className="rounded-2xl border border-white/20 bg-white/2 p-6 backdrop-blur-xs transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10">
       <div className="flex items-start gap-4">
-        <div className="mt-2 p-3 shrink-0 text-white bg-white/10 border border-white/20 rounded-lg">
+        <div className="mt-2 shrink-0 rounded-lg border border-white/20 bg-white/10 p-3 text-white">
           <GraduationCap />
         </div>
 
-        <div className="grow flex flex-col gap-1">
+        <div className="flex grow flex-col gap-1">
           <h3 className="text-lg font-semibold text-white">{qualification}</h3>
 
           <h4 className="text-sm text-purple-400">{instituteName}</h4>

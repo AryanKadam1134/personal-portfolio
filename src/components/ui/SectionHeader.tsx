@@ -1,6 +1,6 @@
 export const SectionHeader = ({ heading }: { heading: string }) => {
   return (
-    <div className="font-semibold text-center text-4xl sm:text-5xl text-white">
+    <div className="text-center text-4xl font-semibold text-white sm:text-5xl">
       {heading}
     </div>
   );

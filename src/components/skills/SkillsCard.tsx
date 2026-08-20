@@ -9,7 +9,7 @@ export const SkillsCard = ({
 
   return (
     <div className="flex flex-col items-center gap-5">
-      <div className="flex items-center gap-2 font-semibold text-2xl text-white">
+      <div className="flex items-center gap-2 text-2xl font-semibold text-white">
         <span>{logoUrl}</span>
         <span>{name}</span>
       </div>
@@ -23,12 +23,9 @@ export const SkillsCard = ({
             return (
               <div
                 key={_id || idx}
-                className="p-6 w-[140px] bg-white/2 backdrop-blur-xs
-                border border-white/20 hover:border-white/50 rounded-xl
-                hover:scale-101 hover:shadow-xl hover:shadow-white/10
-                transition-all duration-300"
+                className="w-[140px] rounded-xl border border-white/20 bg-white/2 p-6 backdrop-blur-xs transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10"
               >
-                <div className="h-full flex flex-col items-center justify-center gap-3">
+                <div className="flex h-full flex-col items-center justify-center gap-3">
                   {logoUrl ? (
                     <img
                       src={
