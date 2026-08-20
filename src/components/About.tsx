@@ -4,6 +4,8 @@ import { Download, MapPin } from "lucide-react";
 
 import { apiEndpoints } from "../services/api";
 
+import { cn } from "../utils/cn";
+
 import type { SocialPlatform, PortfolioDetails } from "../types/types";
 
 export const About = () => {
@@ -80,7 +82,10 @@ export const About = () => {
                 <button
                   key={idx}
                   onClick={() => window.open(link, "_blank")}
-                  className="group cursor-pointer rounded-md border border-white/20 bg-white/2 p-3 backdrop-blur-xs transition-all duration-300 hover:scale-103 hover:border-white/50"
+                  className={cn(
+                    "group cursor-pointer rounded-md border border-white/20 bg-white/2 p-3 backdrop-blur-xs",
+                    "transition-all duration-300 hover:scale-103 hover:border-white/50",
+                  )}
                 >
                   <img
                     src={logoUrl}
@@ -91,7 +96,12 @@ export const About = () => {
               );
             })}
 
-            <button className="ml-4 cursor-pointer rounded-md border border-white/20 bg-white/2 px-4 py-2 backdrop-blur-xs transition-all duration-300 hover:scale-103 hover:border-white/50">
+            <button
+              className={cn(
+                "ml-4 cursor-pointer rounded-md border border-white/20 bg-white/2 px-4 py-2 backdrop-blur-xs",
+                "transition-all duration-300 hover:scale-103 hover:border-white/50",
+              )}
+            >
               <div className="flex items-center gap-2">
                 <Download size={20} /> My Resume
               </div>

@@ -2,6 +2,8 @@ import { ExternalLink } from "lucide-react";
 
 import { Badge } from "../ui/Badge";
 
+import { cn } from "../../utils/cn";
+
 import type { Project } from "../../types/types";
 
 export const ProjectCard = ({
@@ -23,7 +25,12 @@ export const ProjectCard = ({
   const { url } = coverImage || {};
 
   return (
-    <div className="group overflow-hidden rounded-2xl border border-white/20 bg-white/2 backdrop-blur-xs transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10">
+    <div
+      className={cn(
+        "group overflow-hidden rounded-2xl border border-white/20 bg-white/2 backdrop-blur-xs",
+        "transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10",
+      )}
+    >
       <div className="flex h-full flex-col">
         {/* Project Image */}
         <div className="relative aspect-video overflow-hidden">
@@ -57,7 +64,6 @@ export const ProjectCard = ({
           </div>
 
           <div className="mt-auto flex gap-4 pt-4">
-            {/* Added mt-auto */}
             {githubLink && (
               <a
                 href={githubLink}

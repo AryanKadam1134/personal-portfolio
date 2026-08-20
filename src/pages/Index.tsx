@@ -12,6 +12,8 @@ import { Achievements } from "../components/achievements/Achievements";
 
 import { Particles } from "../components/ui/Particles";
 
+import { cn } from "../utils/cn";
+
 export const Index = () => {
   const [loading, setLoading] = useState(true);
 
@@ -44,7 +46,11 @@ export const Index = () => {
       )}
 
       <div
-        className={`relative z-10 ${loading ? "opacity-0" : "opacity-100"} overflow-hidden transition-opacity duration-300`}
+        className={cn(
+          "relative z-10 overflow-hidden",
+          "transition-opacity duration-300",
+          loading ? "opacity-0" : "opacity-100",
+        )}
       >
         <Navbar />
 

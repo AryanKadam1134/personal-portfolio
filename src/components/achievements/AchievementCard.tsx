@@ -1,5 +1,6 @@
 import { Award, ExternalLink } from "lucide-react";
 
+import { cn } from "../../utils/cn";
 import { formatDate } from "../../utils/formatDate";
 
 import type { Achievement } from "../../types/types";
@@ -16,7 +17,12 @@ export const AchievementCard = ({
     link || certificateDetails?.credentialUrl || undefined;
 
   return (
-    <div className="rounded-2xl border border-white/20 bg-white/2 p-6 backdrop-blur-xs transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10">
+    <div
+      className={cn(
+        "rounded-2xl border border-white/20 bg-white/2 p-6 backdrop-blur-xs",
+        "transition-all duration-300 hover:scale-101 hover:border-white/50 hover:shadow-xl hover:shadow-white/10",
+      )}
+    >
       <div className="flex items-start gap-4">
         <div className="mt-2 shrink-0 rounded-lg border border-white/20 bg-white/10 p-3 text-white">
           <Award />

@@ -17,7 +17,10 @@ const NavButton = ({ name, isCurrent, ...props }: NavButtonProps) => {
   return (
     <a
       {...props}
-      className={`${isCurrent ? "font-medium text-white" : "text-white/80"} text-sm`}
+      className={cn(
+        "text-sm",
+        isCurrent ? "font-medium text-white" : "text-white/80",
+      )}
     >
       {name}
     </a>
